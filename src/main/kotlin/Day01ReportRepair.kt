@@ -1,5 +1,5 @@
 object Day01ReportRepair {
-    fun solve(): Int {
+    fun solveFirstPart(): Int {
         val numbers: List<Int> = readNumbersFromFile()
 
         numbers.forEachIndexed { i, n1 ->
@@ -8,6 +8,22 @@ object Day01ReportRepair {
             numbersWithoutCurrent.forEach { n2 ->
                 if (n1 + n2 == 2020) {
                     return n1 * n2
+                }
+            }
+        }
+
+        return -1
+    }
+
+    fun solveSecondPart(): Int {
+        val numbers: List<Int> = readNumbersFromFile()
+
+        numbers.forEachIndexed { i, _ ->
+            numbers.forEachIndexed { j, _ ->
+                numbers.forEachIndexed { k, _ ->
+                    if (numbers[i] + numbers[j] + numbers[k] == 2020) {
+                        return numbers[i] * numbers[j] * numbers[k]
+                    }
                 }
             }
         }
