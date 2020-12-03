@@ -1,4 +1,4 @@
-object Day01ReportRepair {
+object Day1ReportRepair {
     fun solveFirstPart(): Int {
         val numbers: List<Int> = readNumbersFromFile()
 
