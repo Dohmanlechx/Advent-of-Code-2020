@@ -2,7 +2,7 @@ import FileReader.entriesFromDay
 
 object Day1ReportRepair {
     fun solveFirstPart(): Int {
-        val numbers: List<Int> = this.entriesFromDay(1).map(String::toInt)
+        val numbers: List<Int> = entriesFromDay(1).map(String::toInt)
 
         numbers.forEachIndexed { i, n1 ->
             val numbersWithoutCurrent = numbers.toMutableList().apply { removeAt(i) }
