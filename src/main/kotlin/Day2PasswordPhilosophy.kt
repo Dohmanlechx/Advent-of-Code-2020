@@ -1,8 +1,10 @@
+import FileReader.entriesFromDay
+
 object Day2PasswordPhilosophy {
     enum class Part { FIRST, SECOND }
 
     fun solve(part: Part): Int {
-        val entries = FileReader.entries(this, 2)
+        val entries: List<String> = this.entriesFromDay(2)
 
         var validPasswordsCount = 0
 
