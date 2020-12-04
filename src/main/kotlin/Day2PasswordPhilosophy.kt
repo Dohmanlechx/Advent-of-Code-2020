@@ -1,31 +1,7 @@
 object Day2PasswordPhilosophy {
-    fun solveFirstPart(): Int {
-        val entries = FileReader.entries(this, 2)
+    enum class Part { FIRST, SECOND }
 
-        var validPasswordsCount = 0
-
-        entries.forEach { entry ->
-            var min: Int
-            var max: Int
-
-            entry.filterNot(Char::isLetter).split("-").let {
-                min = it[0].filter(Char::isDigit).toInt()
-                max = it[1].filter(Char::isDigit).toInt()
-            }
-
-            val charRequiredAndPassword = entry.replace("-", "").filterNot(Char::isDigit).trimStart()
-            val charRequired = charRequiredAndPassword[0]
-            val password = charRequiredAndPassword.substring(3)
-
-            if (password.filter { it == charRequired }.length in min..max) {
-                validPasswordsCount++
-            }
-        }
-
-        return validPasswordsCount
-    }
-
-    fun solveSecondPart(): Int {
+    fun solve(part: Part): Int {
         val entries = FileReader.entries(this, 2)
 
         var validPasswordsCount = 0
@@ -35,19 +11,28 @@ object Day2PasswordPhilosophy {
             var secondDigit: Int
 
             entry.filterNot(Char::isLetter).split("-").let {
-                firstDigit = it[0].filter(Char::isDigit).toInt() - 1
-                secondDigit = it[1].filter(Char::isDigit).toInt() - 1
+                firstDigit = it[0].filter(Char::isDigit).toInt()
+                secondDigit = it[1].filter(Char::isDigit).toInt()
             }
 
             val charRequiredAndPassword = entry.replace("-", "").filterNot(Char::isDigit).trimStart()
             val charRequired = charRequiredAndPassword[0]
             val password = charRequiredAndPassword.substring(3)
 
-            if (
-                password[firstDigit] == charRequired && password[secondDigit] != charRequired ||
-                password[firstDigit] != charRequired && password[secondDigit] == charRequired
-            ) {
-                validPasswordsCount++
+            when (part) {
+                Part.FIRST -> {
+                    if (password.filter { it == charRequired }.length in firstDigit..secondDigit) {
+                        validPasswordsCount++
+                    }
+                }
+                Part.SECOND -> {
+                    if (
+                        password[firstDigit - 1] == charRequired && password[secondDigit - 1] != charRequired ||
+                        password[firstDigit - 1] != charRequired && password[secondDigit - 1] == charRequired
+                    ) {
+                        validPasswordsCount++
+                    }
+                }
             }
         }
 
