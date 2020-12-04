@@ -3,4 +3,5 @@ fun main() {
     println("Day 1 Part 2: " + Day1ReportRepair.solveSecondPart())
 
     println("Day 2 Part 1: " + Day2PasswordPhilosophy.solveFirstPart())
+    println("Day 2 Part 2: " + Day2PasswordPhilosophy.solveSecondPart())
 }
