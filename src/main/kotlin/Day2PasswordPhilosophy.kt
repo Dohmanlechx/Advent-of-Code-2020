@@ -1,6 +1,6 @@
 object Day2PasswordPhilosophy {
     fun solveFirstPart(): Int {
-        val entries = FileReader.entries(this, "day_02")
+        val entries = FileReader.entries(this, 2)
 
         var validPasswordsCount = 0
 
