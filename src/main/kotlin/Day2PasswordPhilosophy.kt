@@ -1,6 +1,6 @@
 object Day2PasswordPhilosophy {
     fun solveFirstPart(): Int {
-        val entries = readPasswordsFromFile()
+        val entries = FileReader.entries(this, "day_02")
 
         var validPasswordsCount = 0
 
@@ -24,9 +24,4 @@ object Day2PasswordPhilosophy {
 
         return validPasswordsCount
     }
-
-    private fun readPasswordsFromFile() =
-        this::class.java.getResource("day_02")
-            .readText()
-            .split("\n")
 }

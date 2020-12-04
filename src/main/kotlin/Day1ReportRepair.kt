@@ -1,6 +1,6 @@
 object Day1ReportRepair {
     fun solveFirstPart(): Int {
-        val numbers: List<Int> = readNumbersFromFile()
+        val numbers: List<Int> = FileReader.entries(this, "day_01").map(String::toInt)
 
         numbers.forEachIndexed { i, n1 ->
             val numbersWithoutCurrent = numbers.toMutableList().apply { removeAt(i) }
@@ -16,7 +16,7 @@ object Day1ReportRepair {
     }
 
     fun solveSecondPart(): Int {
-        val numbers: List<Int> = readNumbersFromFile()
+        val numbers: List<Int> = FileReader.entries(this, "day_01").map(String::toInt)
 
         numbers.forEachIndexed { i, _ ->
             numbers.forEachIndexed { j, _ ->
@@ -30,10 +30,4 @@ object Day1ReportRepair {
 
         return -1
     }
-
-    private fun readNumbersFromFile() =
-        this::class.java.getResource("day_01")
-            .readText()
-            .split("\n")
-            .map { it.trim().toInt() }
 }
