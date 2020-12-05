@@ -7,4 +7,7 @@ fun main() {
 
     println("Day 3 Part 1: " + Day3TobogganTrajectory.solveFirstPart())
     println("Day 3 Part 2: " + Day3TobogganTrajectory.solveSecondPart())
+
+    println("Day 4 Part 1: " + Day4PassportProcessing.solveFirstPart())
+    println("Day 4 Part 2: " + Day4PassportProcessing.solveSecondPart())
 }
