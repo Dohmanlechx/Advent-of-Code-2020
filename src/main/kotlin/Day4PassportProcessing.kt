@@ -16,7 +16,9 @@ object Day4PassportProcessing {
     }
 }
 
-fun String.toPassport(): Passport {
+/// ----- Extensions -----
+
+private fun String.toPassport(): Passport {
     val attributes = this.replace(" ", "\r\n").split("\r\n")
 
     fun List<String>.findAttribute(attr: String) =
@@ -34,9 +36,11 @@ fun String.toPassport(): Passport {
     )
 }
 
-fun String.toIntOrZero() = this.filter(Char::isDigit).toIntOrNull() ?: 0
+private fun String.toIntOrZero() = this.filter(Char::isDigit).toIntOrNull() ?: 0
 
-data class Passport(
+/// ----- Model class and inner methods -----
+
+private data class Passport(
     val birthYear: String?,
     val issueYear: String?,
     val expirationYear: String?,
@@ -68,8 +72,8 @@ data class Passport(
 
     private fun String.isValidHeight(): Boolean {
         return when {
-            this.contains("cm") -> this.filter(Char::isDigit).toInt() in 150..193
-            this.contains("in") -> this.filter(Char::isDigit).toInt() in 59..76
+            this.contains("cm") -> this.toIntOrZero() in 150..193
+            this.contains("in") -> this.toIntOrZero() in 59..76
             else -> false
         }
     }
@@ -80,13 +84,9 @@ data class Passport(
     private fun String.isValidEyeColor(): Boolean {
         var validColorsCount = 0
 
-        if (this.contains("amb")) validColorsCount++
-        if (this.contains("blu")) validColorsCount++
-        if (this.contains("brn")) validColorsCount++
-        if (this.contains("gry")) validColorsCount++
-        if (this.contains("grn")) validColorsCount++
-        if (this.contains("hzl")) validColorsCount++
-        if (this.contains("oth")) validColorsCount++
+        listOf("amb", "blu", "brn", "gry", "grn", "hzl", "oth").forEach { color ->
+            if (this.contains(color)) validColorsCount++
+        }
 
         return validColorsCount == 1
     }
