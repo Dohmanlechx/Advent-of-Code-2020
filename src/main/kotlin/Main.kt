@@ -10,4 +10,7 @@ fun main() {
 
     println("Day 4 Part 1: " + Day4PassportProcessing.solveFirstPart())
     println("Day 4 Part 2: " + Day4PassportProcessing.solveSecondPart())
+
+    println("Day 5 Part 1: " + Day5BinaryBoarding.solveFirstPart())
+    println("Day 5 Part 2: " + Day5BinaryBoarding.solveSecondPart())
 }
