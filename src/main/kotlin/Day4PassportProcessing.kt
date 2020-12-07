@@ -1,15 +1,15 @@
-import FileReader.entriesFromDay
+import FileReader.inputFromDay
 
 object Day4PassportProcessing {
     fun solveFirstPart(): Int {
-        return entriesFromDay(4, splitBy = "\n\r")
+        return inputFromDay(4, splitBy = "\n\r")
             .map(String::toPassport)
             .filter(Passport::isValid)
             .size
     }
 
     fun solveSecondPart(): Int {
-        return entriesFromDay(4, splitBy = "\n\r")
+        return inputFromDay(4, splitBy = "\n\r")
             .map(String::toPassport)
             .filter(Passport::isValidPartTwo)
             .size

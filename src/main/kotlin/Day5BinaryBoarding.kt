@@ -1,4 +1,4 @@
-import FileReader.entriesFromDay
+import FileReader.inputFromDay
 
 object Day5BinaryBoarding {
     fun solveFirstPart() = generateSeatIds().maxOrNull()
@@ -16,7 +16,7 @@ object Day5BinaryBoarding {
     }
 
     private fun generateSeatIds(): List<Int> {
-        val entries = entriesFromDay(5)
+        val entries = inputFromDay(5)
         val seatIds = mutableListOf<Int>()
 
         for (entry in entries) {

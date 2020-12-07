@@ -1,4 +1,4 @@
-import FileReader.entriesFromDay
+import FileReader.inputFromDay
 
 object Day3TobogganTrajectory {
     fun solveFirstPart() =
@@ -12,7 +12,7 @@ object Day3TobogganTrajectory {
                 countTrees(2, 1)
 
     private fun countTrees(stepDown: Int, stepRight: Int): Long {
-        val entries: List<List<Char>> = entriesFromDay(3).map(String::toList)
+        val entries: List<List<Char>> = inputFromDay(3).map(String::toList)
 
         val rowMaxIndex = entries.size - 1
         val columnMaxIndex = entries.first().size - 1
