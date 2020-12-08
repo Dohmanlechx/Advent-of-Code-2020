@@ -1,10 +1,23 @@
 import FileReader.inputFromDay
 
-object Day7HandyHaversacks {
-    private val bags = inputFromDay(7)
-    private val bagsMap = bags.mapIndexed { i, _ -> (parentBagOf(i) to childBagsOf(i)) }
+typealias Parent = String
+typealias Child = String
+typealias Children = List<String>
 
-    fun solveFirstPart() = bagsContainingGoldBag().size - 1
+object Day7HandyHaversacks {
+    private const val SHINY_GOLD = "shinygold"
+
+    private val bags = inputFromDay(7)
+    private val bagsMap = mutableMapOf<Parent, Children>()
+
+    init {
+        for (i in bags.indices) {
+            bagsMap[parentBagOf(i)] = childBagsOf(i)
+        }
+    }
+
+    fun solveFirstPart() = bagsWithGoldBagCount() - 1
+    fun solveSecondPart() = bagChildCount() - 1
 
     private fun parentBagOf(index: Int) =
         bags.map { it.split("bags")[0] }[index]
@@ -15,17 +28,17 @@ object Day7HandyHaversacks {
             .replace("bags", "")
             .replace("bag", "")
             .split(",")
-            .map { it.filter(Char::isLetter) }
+            .map { it.filter(Char::isLetterOrDigit) }
 
-    private fun bagsContainingGoldBag(
-        bagsToSearch: List<String> = listOf("shinygold"),
-        bagsFound: List<String> = emptyList()
-    ): List<String> {
+    private fun bagsWithGoldBagCount(
+        bagsToSearch: List<Parent> = listOf(SHINY_GOLD),
+        bagsFound: List<Parent> = emptyList()
+    ): Int {
         val bagsToSearchCopy = bagsToSearch.toMutableList()
         val bagsFoundCopy = bagsFound.toMutableList()
 
         return if (bagsToSearch.isEmpty()) {
-            bagsFound
+            bagsFound.size
         } else {
             val bag = bagsToSearchCopy.first()
 
@@ -33,16 +46,36 @@ object Day7HandyHaversacks {
             bagsFoundCopy.addIfAbsent(bag)
 
             for ((parent, children) in bagsMap) {
-                if (children.contains(bag)) {
+                if (children.removeAmount().contains(bag)) {
                     bagsToSearchCopy.addIfAbsent(parent)
                 }
             }
 
-            bagsContainingGoldBag(bagsToSearchCopy, bagsFoundCopy)
+            bagsWithGoldBagCount(bagsToSearchCopy, bagsFoundCopy)
         }
     }
 
-    private fun <T> MutableList<T>.addIfAbsent(element: T) {
+    private fun bagChildCount(parent: Parent = SHINY_GOLD): Int {
+        var count = 1
+
+        bagsMap[parent]?.let { children ->
+            for (child in children) {
+                val amount = child.amountOrZero()
+                val bag = child.filterNot(Char::isDigit)
+                count += amount * bagChildCount(parent = bag)
+            }
+        }
+
+        return count
+    }
+
+    private fun MutableList<Parent>.addIfAbsent(element: Parent) {
         if (!contains(element)) add(element)
     }
+
+    private fun Child.amountOrZero() =
+        filter(Char::isDigit).takeIf(String::isNotBlank)?.toInt() ?: 0
+
+    private fun Children.removeAmount() =
+        map { it.filter(Char::isLetter) }
 }

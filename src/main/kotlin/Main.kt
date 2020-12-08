@@ -18,4 +18,5 @@ fun main() {
 //    println("Day 6 Part 2: " + Day6CustomCustoms.solveSecondPart())
 
     println("Day 7 Part 1: " + Day7HandyHaversacks.solveFirstPart())
+    println("Day 7 Part 2: " + Day7HandyHaversacks.solveSecondPart())
 }
