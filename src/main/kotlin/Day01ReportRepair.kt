@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day1ReportRepair {
+object Day01ReportRepair {
     fun solveFirstPart(): Int {
         val numbers: List<Int> = inputFromDay(1).map(String::toInt)
 

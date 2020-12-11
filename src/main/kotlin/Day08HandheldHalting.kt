@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day8HandheldHalting {
+object Day08HandheldHalting {
     data class Operation(
         var action: String,
         var steps: Int,

@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day5BinaryBoarding {
+object Day05BinaryBoarding {
     fun solveFirstPart() = generateSeatIds().maxOrNull()
 
     fun solveSecondPart(): Int {

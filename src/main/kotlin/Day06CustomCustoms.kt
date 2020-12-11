@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day6CustomCustoms {
+object Day06CustomCustoms {
     fun solveFirstPart() =
         inputFromDay(6, splitBy = "\n\r")
             .map { it.toSet().filter(Char::isLetter).size }

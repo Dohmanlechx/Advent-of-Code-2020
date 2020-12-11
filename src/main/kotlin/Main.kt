@@ -23,6 +23,8 @@ fun main() {
 //    println("Day 8 Part 1: " + Day8HandheldHalting.solveFirstPart())
 //    println("Day 8 Part 2: " + Day8HandheldHalting.solveSecondPart())
 
-    println("Day 9 Part 1: " + Day9EncodingError.solveFirstPart())
-    println("Day 9 Part 2: " + Day9EncodingError.solveSecondPart())
+//    println("Day 9 Part 1: " + Day9EncodingError.solveFirstPart())
+//    println("Day 9 Part 2: " + Day9EncodingError.solveSecondPart())
+
+    println("Day 10 Part 1: " + Day10AdapterArray.solveFirstPart())
 }

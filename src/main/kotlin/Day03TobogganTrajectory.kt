@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day3TobogganTrajectory {
+object Day03TobogganTrajectory {
     fun solveFirstPart() =
         countTrees(stepDown = 1, stepRight = 3)
 

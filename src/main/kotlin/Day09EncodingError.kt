@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day9EncodingError {
+object Day09EncodingError {
     private val numbers = inputFromDay(9).map(String::toLong)
     private const val preambleLength = 25
 

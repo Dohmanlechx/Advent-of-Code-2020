@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day2PasswordPhilosophy {
+object Day02PasswordPhilosophy {
     enum class Part { FIRST, SECOND }
 
     fun solve(part: Part): Int {
