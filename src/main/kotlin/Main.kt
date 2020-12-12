@@ -26,5 +26,8 @@ fun main() {
 //    println("Day 9 Part 1: " + Day9EncodingError.solveFirstPart())
 //    println("Day 9 Part 2: " + Day9EncodingError.solveSecondPart())
 
-    println("Day 10 Part 1: " + Day10AdapterArray.solveFirstPart())
+//    println("Day 10 Part 1: " + Day10AdapterArray.solveFirstPart())
+
+    println("Day 11 Part 1: " + Day11SeatingSystem.solve(Day11SeatingSystem.Part.FIRST))
+    println("Day 11 Part 2: " + Day11SeatingSystem.solve(Day11SeatingSystem.Part.SECOND))
 }
