@@ -4,7 +4,7 @@ typealias Parent = String
 typealias Child = String
 typealias Children = List<String>
 
-object Day7HandyHaversacks {
+object Day07HandyHaversacks {
     private const val SHINY_GOLD = "shinygold"
 
     private val bags = inputFromDay(7)

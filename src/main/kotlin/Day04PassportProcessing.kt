@@ -1,6 +1,6 @@
 import FileReader.inputFromDay
 
-object Day4PassportProcessing {
+object Day04PassportProcessing {
     fun solveFirstPart(): Int {
         return inputFromDay(4, splitBy = "\n\r")
             .map(String::toPassport)
