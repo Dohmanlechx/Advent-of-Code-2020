@@ -31,6 +31,8 @@ fun main() {
 //    println("Day 11 Part 1: " + Day11SeatingSystem.solve(Day11SeatingSystem.Part.FIRST))
 //    println("Day 11 Part 2: " + Day11SeatingSystem.solve(Day11SeatingSystem.Part.SECOND))
 
-    println("Day 12 Part 1: " + Day12RainRisk.solve(isFirstPart = true))
-    println("Day 12 Part 2: " + Day12RainRisk.solve(isFirstPart = false))
+//    println("Day 12 Part 1: " + Day12RainRisk.solve(isFirstPart = true))
+//    println("Day 12 Part 2: " + Day12RainRisk.solve(isFirstPart = false))
+
+    println("Day 13 Part 1: " + Day13ShuttleSearch.solveFirstPart())
 }
