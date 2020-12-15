@@ -34,6 +34,8 @@ fun main() {
 //    println("Day 12 Part 1: " + Day12RainRisk.solve(isFirstPart = true))
 //    println("Day 12 Part 2: " + Day12RainRisk.solve(isFirstPart = false))
 
-    println("Day 13 Part 1: " + Day13ShuttleSearch.solveFirstPart())
+//    println("Day 13 Part 1: " + Day13ShuttleSearch.solveFirstPart())
 //    println("Day 13 Part 2: " + Day13ShuttleSearch.solveSecondPart())
+
+    println("Day 14 Part 1: " + Day14DockingData.solveFirstPart())
 }
