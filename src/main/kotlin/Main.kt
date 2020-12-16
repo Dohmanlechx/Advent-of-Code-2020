@@ -37,5 +37,8 @@ fun main() {
 //    println("Day 13 Part 1: " + Day13ShuttleSearch.solveFirstPart())
 //    println("Day 13 Part 2: " + Day13ShuttleSearch.solveSecondPart())
 
-    println("Day 14 Part 1: " + Day14DockingData.solveFirstPart())
+//    println("Day 14 Part 1: " + Day14DockingData.solveFirstPart())
+
+    println("Day 15 Part 1: " + Day15RambunctiousRecitation.solve(2020))
+    println("Day 15 Part 2: " + Day15RambunctiousRecitation.solve(30_000_000))
 }

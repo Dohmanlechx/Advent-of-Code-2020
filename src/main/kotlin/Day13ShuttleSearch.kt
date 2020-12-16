@@ -31,6 +31,7 @@ object Day13ShuttleSearch {
     // This only solves the examples, not the actual input, I gave up
     // Example of solution: https://github.com/tginsberg/advent-2020-kotlin/blob/main/src/main/kotlin/com/ginsberg/advent2020/Day13.kt
     fun solveSecondPart(): Long {
+        val stepSize = buses.first().id
         var timestamp = 0L
 
         while (!isValidByRequirements(timestamp)) {
