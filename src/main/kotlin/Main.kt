@@ -42,6 +42,8 @@ fun main() {
 //    println("Day 15 Part 1: " + Day15RambunctiousRecitation.solve(2020))
 //    println("Day 15 Part 2: " + Day15RambunctiousRecitation.solve(30_000_000))
 
-    println("Day 16 Part 1: " + Day16TicketTranslation.solveFirstPart())
-    println("Day 16 Part 2: " + Day16TicketTranslation.solveSecondPart())
+//    println("Day 16 Part 1: " + Day16TicketTranslation.solveFirstPart())
+//    println("Day 16 Part 2: " + Day16TicketTranslation.solveSecondPart())
+
+    println("Day 22 Part 1: " + Day22CrabCombat.solveFirstPart())
 }
